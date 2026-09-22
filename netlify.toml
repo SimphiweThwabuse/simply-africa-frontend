@@ -2,3 +2,9 @@
   from = "/api/*"
   to = "https://simphiwe.pythonanywhere.com/api/:splat"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
