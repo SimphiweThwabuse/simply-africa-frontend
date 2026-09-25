@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext.jsx'
 import {
   LayoutDashboard,
   Building2,
@@ -25,6 +26,15 @@ const NAV_ITEMS = [
 ]
 
 export default function Sidebar({ open = false, onClose }) {
+  const { user } = useAuth()
+
+  const navItems = [
+    ...NAV_ITEMS,
+    ...(user?.role === 'admin'
+      ? [{ to: '/users', label: 'User Management', icon: Users }]
+      : []),
+  ]
+
   return (
     <>
       {open && (
@@ -50,7 +60,7 @@ export default function Sidebar({ open = false, onClose }) {
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
-        {NAV_ITEMS.map((item) => (
+        {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}

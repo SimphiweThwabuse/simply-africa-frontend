@@ -14,6 +14,7 @@ import Reports from './pages/Reports.jsx'
 import Settings from './pages/Settings.jsx'
 import Notifications from './pages/Notifications.jsx'
 import AddOrganisation from './pages/AddOrganisation.jsx'
+import Users from './pages/Users.jsx'
 
 // Wrap every page except /signin - one line per route keeps this readable
 // as more pages get added.
@@ -35,6 +36,7 @@ export default function App() {
       <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
       <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
       <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
+      <Route path="/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
     </Routes>
   )
 }

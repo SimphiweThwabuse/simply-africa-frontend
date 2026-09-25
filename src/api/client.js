@@ -18,10 +18,13 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('token')
-      localStorage.removeItem('user')
-      window.location.href = '/signin'
+      console.error('AUTH 401:', {
+        url: error.config?.url,
+        method: error.config?.method,
+        response: error.response?.data,
+      })
     }
+
     return Promise.reject(error)
   }
 )
