@@ -77,7 +77,7 @@ export default function SignIn() {
         </div>
 
         <div className="branding-partners">
-          <p className="mb-2 text-xs text-white/50">
+          <p className="mb-3 text-sm text-white/60">
             Trusted by partners and sponsors across the continent
           </p>
           <div
@@ -88,16 +88,16 @@ export default function SignIn() {
               {[...partners, ...partners].map((partner, index) => (
                 <div
                   key={`${partner}-${index}`}
-                  className="flex shrink-0 items-center gap-2 rounded-full border border-amber-400/25 bg-white/5 px-3 py-1.5"
+                  className="flex shrink-0 items-center gap-3 rounded-full border border-amber-400/25 bg-white/5 px-4 py-2.5"
                 >
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 to-amber-600 text-[9px] font-semibold text-ink">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 to-amber-600 text-xs font-semibold text-ink">
                     {partner
                       .split(' ')
                       .map((word) => word[0])
                       .join('')
                       .slice(0, 2)}
                   </span>
-                  <span className="text-xs text-white/70">{partner}</span>
+                  <span className="text-base text-white/80">{partner}</span>
                 </div>
               ))}
             </div>
